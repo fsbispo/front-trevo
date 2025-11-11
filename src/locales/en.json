@@ -1,0 +1,36 @@
+{
+  "common": {
+    "login": "Login",
+    "register": "Register",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "scratchcards": "Scratchcards",
+    "support": "Support",
+    "components": "Components",
+    "language": "Settings"
+  },
+  "pages": {
+    "home": {
+      "title": "Home",
+      "welcome": "Welcome to the home page"
+    },
+    "scratchcards": {
+      "title": "Scratchcards",
+      "description": "Manage scratchcards"
+    },
+    "support": {
+      "title": "Support",
+      "description": "Support center"
+    },
+    "language": {
+      "title": "Settings",
+      "description": "System settings"
+    },
+    "components": {
+      "title": "Components",
+      "description": "Showcase of all available system components"
+    }
+  }
+}

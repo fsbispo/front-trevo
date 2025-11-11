@@ -1,0 +1,36 @@
+{
+  "common": {
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "language": "Idioma"
+  },
+  "navigation": {
+    "home": "",
+    "scratchcards": "Raspadinhas",
+    "support": "Suporte",
+    "components": "Componentes",
+    "language": "Configurações"
+  },
+  "pages": {
+    "home": {
+      "title": "Home",
+      "welcome": "Bem-vindo à página inicial"
+    },
+    "scratchcards": {
+      "title": "Usuários",
+      "description": "Gerenciar usuários do sistema"
+    },
+    "support": {
+      "title": "Documentos",
+      "description": "Gerenciar documentos"
+    },
+    "language": {
+      "title": "Configurações",
+      "description": "Configurações do sistema"
+    },
+    "components": {
+      "title": "Componentes",
+      "description": "Showcase de todos os componentes disponíveis no sistema"
+    }
+  }
+}

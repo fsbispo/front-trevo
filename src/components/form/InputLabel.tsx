@@ -133,7 +133,7 @@ export default function InputLabel({
             value={value}
             onChange={onChange}
             autoComplete={type === "password" ? "off" : "on"}
-            className={`input-placeholder ${leftIcon ? "pl-10" : "pl-3"} ${rightIcon ? "pr-10" : "pr-3"} border`}
+            className={`input-placeholder h-10 ${leftIcon ? "pl-10" : "pl-3"} ${rightIcon ? "pr-10" : "pr-3"} border`}
             style={baseStyles}
             onFocus={handleFocus}
             onBlur={handleBlur}

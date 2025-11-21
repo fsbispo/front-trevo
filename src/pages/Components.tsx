@@ -2,6 +2,9 @@ import PrincipalButton from '../components/button/PrimaryButton';
 import SecondaryButton from '../components/button/SecondaryButton';
 import InputLabel from '../components/form/InputLabel';
 import TitleSubtitle from '../components/common/TitleSubtitle';
+import CarouselSection from '../components/carousel/CarouselSection';
+import TodayPaidCard from '../components/cards/TodayPaidCard';
+import WinnerCard from '../components/cards/WinnerCard';
 import { 
   Play, 
   Download, 
@@ -26,6 +29,25 @@ export default function Components() {
       </div>
 
       <div className="space-y-12">
+        {/* Carrosséis */}
+        <section>
+          <h2 className="text-2xl font-semibold text-white mb-6 border-b border-gray-700 pb-2">
+            Carrosséis
+          </h2>
+          <div className="space-y-6">
+            <CarouselSection title="Pagou hoje">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <TodayPaidCard key={i} game="Plinko X" amount="R$11.500.000,00" />
+              ))}
+            </CarouselSection>
+
+            <CarouselSection title="Ganhadores recentes">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <WinnerCard key={i} name="Ryan Kenter" game="Plinko X" amount="R$150,00" />
+              ))}
+            </CarouselSection>
+          </div>
+        </section>
         {/* Buttons Section */}
         <section>
           <h2 className="text-2xl font-semibold text-white mb-6 border-b border-gray-700 pb-2">

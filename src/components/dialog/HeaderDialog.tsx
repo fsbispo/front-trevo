@@ -1,6 +1,6 @@
 import { MdClose } from 'react-icons/md';
 import logo from '../../assets/logo.svg';
-import IconButton from "../button/iconButton";
+import IconButton from "../button/IconButton";
 
 interface HeaderDialogProps {
   onClose: () => void;

@@ -44,8 +44,8 @@ const variantStyles: Record<ButtonVariant, { bg: string; hover: string; text: st
   gunmetal: {
     bg: colors.gunmetal,
     hover: colors.darkBlue,
-    text: colors.text.primary,
-    borderColor: colors.border.slateBlue,
+    text: colors.text.slateBlue,
+    borderColor: colors.gunmetal,
   },
 };
 

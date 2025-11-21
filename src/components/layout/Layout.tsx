@@ -24,14 +24,14 @@ export default function Layout({ children }: LayoutProps) {
           isExpanded ? 'ml-64' : 'ml-16'
         }`}
       >
-        <div className="p-6">
+        <div className="p-6 max-w-[1660px] mx-auto">
           {children}
         </div>
       </main>
 
       {/* Mobile Layout */}
       <main className="md:hidden pt-16 pb-20">
-        <div className="p-4">
+        <div className="p-4 max-w-[1660px] mx-auto">
           {children}
         </div>
       </main>

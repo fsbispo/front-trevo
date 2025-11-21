@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useSidebar } from '../../contexts/SidebarContext';
 import colors from '../../styles/colors';
 import logoImage from '../../assets/logo.svg';
-import { LoginDialog } from '../dialog/login';
-import { RegisterDialog } from '../dialog/register';
+import { LoginDialog } from '../dialog/Login';
+import { RegisterDialog } from '../dialog/Register';
 
 export default function Header() {
   const { isExpanded } = useSidebar();
@@ -27,7 +27,7 @@ export default function Header() {
       } left-0`}
       style={{ backgroundColor: colors.background.primary, borderBottom: `1px solid ${colors.border.slateBlue}` }}
     >
-      <div className="h-full flex items-center justify-between px-6">
+      <div className="h-full flex items-center justify-between px-6 max-w-[1660px] mx-auto">
         <div className="flex items-center gap-3">
           <div className="flex items-center justify-center overflow-hidden">
             <img 

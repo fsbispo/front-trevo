@@ -52,8 +52,37 @@ export const colors = {
     muted: '#6B7280',
     slateBlue: '#166778',
     emerald: '#14CC60',
-    pigmentGreen: '#09A129'
+    pigmentGreen: '#09A129',
+    darkBlue: '#125463',
   }
+};
+
+export const playButtonColors = {
+  gradient: {
+    from: "#f0d87b",
+    mid: "#ddab38",
+    mid2: "#f8d579",
+    to: "#c28b0a",
+  },
+  border: "#d6bf5c",
+  text: "#231a04",
+};
+
+export const cardStyles = {
+  
+  card: {
+    background: '#125463', // --color-darkslategray-200
+    headerBackground: '#166778', // topo
+    bodyBackground: '#166778', // parte de baixo (igual topo)
+    border: '#166778', // --color-darkslategray-100
+    title: '#a0dfed', // --color-powderblue
+    value: '#27fb6b', // springgreen
+  },
+
+  fonts: {
+    title: 'var(--font-noto-sans)', // nome do jogo
+    value: 'var(--font-familjen-grotesk)', // valor
+  },
 };
 
 export const getColor = (colorPath: string): string => {

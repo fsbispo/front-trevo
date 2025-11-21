@@ -1,33 +1,230 @@
-import colors from '../../styles/colors'
+import React from "react";
+import { cardStyles } from "@/styles/colors";
+import PlayButton from "../button/PlayButton";
+import plinkoImage from "../../assets/plinko.png";
 
 interface WinnerCardProps {
-  name: string
-  game: string
-  amount: string
-  imageUrl?: string
+  image?: string;
+  position?: number | string;
+  title: string;
+  name?: string;
+  amount: string;
+  onPlay?: () => void;
+  variant?: "withButton" | "compact";
 }
 
-export default function WinnerCard({ name, game, amount, imageUrl }: WinnerCardProps) {
-  return (
-    <div
-      className="min-w-[200px] sm:min-w-[220px] rounded-xl p-3"
-      style={{
-        backgroundColor: 'rgba(8,35,41,0.9)',
-        border: `1px solid ${colors.border.slateBlue}`
-      }}
-    >
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-md bg-gradient-to-br from-emerald-500/40 to-cyan-400/30 overflow-hidden flex items-center justify-center">
-          {imageUrl ? <img src={imageUrl} alt={game} className="w-full h-full object-cover" /> : (
-            <div className="w-6 h-6 rounded-full bg-emerald-300/60" />
-          )}
+const WinnerCard: React.FC<WinnerCardProps> = ({
+  image = plinkoImage,
+  position = "1°",
+  title,
+  name = "Nome do jogador",
+  amount,
+  onPlay,
+  variant = "compact",
+}) => {
+  if (variant === "compact") {
+    return (
+      <div
+        style={{
+          display: "flex",
+          borderRadius: 12,
+          backgroundColor: cardStyles.card.background,
+          border: `1px solid ${cardStyles.card.border}`,
+          color: cardStyles.card.title,
+          fontFamily: cardStyles.fonts.title,
+        }}
+      >
+        <div style={{
+          padding: '12px',
+          borderRight: `1px solid ${cardStyles.card.border}`
+
+        }}
+        >
+
+          <div
+            style={{
+              width: 62,
+              height: 62,
+              borderRadius: 8,
+              overflow: "hidden",
+              flexShrink: 0,
+            }}
+          >
+            <img
+              src={image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
         </div>
-        <div className="truncate">
-          <div className="text-xs font-medium text-white truncate max-w-[120px]">{name}</div>
-          <div className="text-[11px] text-emerald-200/90">{game}</div>
+        <div style={{
+          padding: '12px'
+        }}>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              flex: 1,
+            }}
+          >
+            <div
+              style={{
+                fontSize: 16,
+                fontWeight: "bold",
+                wordBreak: "break-word",
+              }}
+            >
+              {name}
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: cardStyles.card.title,
+                wordBreak: "break-word",
+              }}
+            >
+              {title}
+            </div>
+            <div
+              style={{
+                fontSize: 16,
+                fontWeight: "bold",
+                color: cardStyles.card.value,
+                fontFamily: cardStyles.fonts.value,
+              }}
+            >
+              {amount}
+            </div>
+          </div>
         </div>
       </div>
-      <div className="mt-2 text-sm font-bold text-emerald-400">{amount}</div>
+
+    );
+  }
+
+  // Layout padrão com botão
+  return (
+    <div
+      style={{
+        position: "relative",
+        borderRadius: 12,
+        backgroundColor: cardStyles.card.background,
+        border: `1px solid ${cardStyles.card.border}`,
+        display: "flex",
+        flexDirection: "column",
+        padding: 12,
+        color: cardStyles.card.title,
+        fontFamily: cardStyles.fonts.title,
+      }}
+    >
+      {/* TOPO */}
+      <div
+        style={{
+          borderRadius: "8px 8px 0 0",
+          border: `1px solid ${cardStyles.card.border}`,
+          display: "flex",
+          alignItems: "center",
+          padding: 6,
+          gap: 6,
+          backgroundColor: cardStyles.card.background,
+        }}
+      >
+        {/* IMG + POSIÇÃO */}
+        <div
+          style={{
+            borderRadius: 6,
+            display: "flex",
+            alignItems: "center",
+            position: "relative",
+            gap: 7,
+          }}
+        >
+          <div
+            style={{
+              width: 42,
+              height: 42,
+              borderRadius: 8,
+              overflow: "hidden",
+              flexShrink: 0,
+            }}
+          >
+            <img
+              src={image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+
+          {/* POSIÇÃO */}
+          <div
+            style={{
+              height: 16,
+              position: "absolute",
+              top: 0,
+              left: 0,
+              borderRadius: "8px 0 6px 0",
+              background: cardStyles.card.value,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "0 4px",
+              fontSize: 12,
+              fontWeight: "bold",
+              color: "#000",
+              fontFamily: cardStyles.fonts.value,
+            }}
+          >
+            {position}
+          </div>
+        </div>
+
+        {/* BOTÃO JOGAR */}
+        <PlayButton size="sm" onClick={onPlay} />
+      </div>
+
+      {/* INFO */}
+      <div
+        style={{
+          borderRadius: "0 0 8px 8px",
+          backgroundColor: cardStyles.card.bodyBackground,
+          border: `1px solid ${cardStyles.card.border}`,
+          display: "flex",
+          flexDirection: "column",
+          padding: 6,
+        }}
+      >
+        <div
+          style={{
+            fontSize: 14,
+            color: cardStyles.card.title,
+            fontFamily: cardStyles.fonts.title,
+          }}
+        >
+          {title}
+        </div>
+
+        <b
+          style={{
+            fontSize: 16,
+            color: cardStyles.card.value,
+            marginTop: 4,
+            fontFamily: cardStyles.fonts.value,
+          }}
+        >
+          {amount}
+        </b>
+      </div>
     </div>
-  )
-}
+
+  );
+};
+
+export default WinnerCard;

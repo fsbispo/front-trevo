@@ -105,7 +105,7 @@ const Profile: React.FC = () => {
                     </div>
 
                     <div className="flex gap-3">
-                      <PrimaryButton variant="springGreen" size="small">
+                      <PrimaryButton variant="primary" size="small">
                         💰 DEPOSITAR
                       </PrimaryButton>
                       <PrimaryButton variant="primary" size="small">

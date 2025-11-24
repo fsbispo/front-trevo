@@ -5,7 +5,6 @@ import PrimaryButton from "../components/button/PrimaryButton";
 import InputLabel from "../components/form/InputLabel";
 import colors from "../styles/styles";
 import profileBackground from "../assets/profile-background.jpg";
-import ioMdWallet
 
 type TabType = "dados-pessoais" | "historico" | "financeiro";
 

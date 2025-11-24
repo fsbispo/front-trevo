@@ -4,6 +4,7 @@ import { BsBank, BsGift } from "react-icons/bs";
 import PrimaryButton from "../components/button/PrimaryButton";
 import InputLabel from "../components/form/InputLabel";
 import colors from "../styles/styles";
+import profileBackground from "../assets/profile-background.jpg";
 
 type TabType = "dados-pessoais" | "historico" | "financeiro";
 
@@ -26,21 +27,20 @@ const Profile: React.FC = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: colors.gunmetal }}>
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Banner Hero com Trevo */}
+        {/* Banner Hero com Imagem */}
         <div className="relative w-full rounded-3xl overflow-hidden mb-8">
           <div
-            className="w-full"
+            className="w-full bg-cover bg-center relative"
             style={{
               height: '220px',
-              background: 'linear-gradient(135deg, #4CAF50 0%, #81C784 50%, #4CAF50 100%)',
+              backgroundImage: `url(${profileBackground})`,
               borderRadius: '24px 24px 0 0'
             }}
           >
-            <div className="absolute inset-0 flex items-center justify-center" style={{ height: '220px' }}>
-              <div className="text-center">
-                <div className="text-8xl opacity-30">🍀</div>
-              </div>
-            </div>
+            <div className="absolute inset-0" style={{
+              background: 'linear-gradient(135deg, rgba(76, 175, 80, 0.3) 0%, rgba(129, 199, 132, 0.2) 50%, rgba(76, 175, 80, 0.3) 100%)',
+              height: '220px'
+            }} />
           </div>
 
           {/* Profile Info Below Image */}

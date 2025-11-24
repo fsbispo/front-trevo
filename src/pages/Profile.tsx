@@ -15,6 +15,7 @@ const Profile: React.FC = () => {
   const [phone, setPhone] = useState("+55 13 99123-4567");
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  const [showBalance, setShowBalance] = useState(true);
 
   const userId = "342568719";
   const totalBalance = "R$100.500,00";
@@ -78,25 +79,39 @@ const Profile: React.FC = () => {
                   </div>
 
                   <div
-                    className="rounded-xl p-3"
-                    style={{ backgroundColor: colors.slateBlue }}
+                    className="rounded-2xl p-5"
+                    style={{ backgroundColor: colors.darkBlue, border: `1px solid ${colors.slateBlue}` }}
                   >
-                    <div className="flex items-center gap-2 mb-1">
-                      <BsBank style={{ color: colors.springGreen }} />
-                      <p className="text-xs" style={{ color: colors.text.muted }}>Saldo total</p>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <BsBank size={28} style={{ color: colors.springGreen }} />
+                        <div>
+                          <p className="text-sm" style={{ color: colors.text.muted }}>Saldo total</p>
+                          <p className="text-2xl font-bold" style={{ color: colors.white }}>
+                            {showBalance ? totalBalance : "R$•••.•••,••"}
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        className="p-2 hover:opacity-80 transition-opacity"
+                        onClick={() => setShowBalance(!showBalance)}
+                      >
+                        {showBalance ? (
+                          <FiEye size={24} style={{ color: colors.text.muted }} />
+                        ) : (
+                          <FiEyeOff size={24} style={{ color: colors.text.muted }} />
+                        )}
+                      </button>
                     </div>
-                    <p className="text-xl font-bold" style={{ color: colors.white }}>
-                      {totalBalance}
-                    </p>
-                  </div>
 
-                  <div className="flex flex-col gap-2">
-                    <PrimaryButton variant="springGreen" size="small">
-                      DEPOSITAR 💰
-                    </PrimaryButton>
-                    <PrimaryButton variant="primary" size="small">
-                      SACAR 💵
-                    </PrimaryButton>
+                    <div className="flex gap-3">
+                      <PrimaryButton variant="springGreen" size="small">
+                        DEPOSITAR 💰
+                      </PrimaryButton>
+                      <PrimaryButton variant="primary" size="small">
+                        SACAR 💵
+                      </PrimaryButton>
+                    </div>
                   </div>
                 </div>
               </div>

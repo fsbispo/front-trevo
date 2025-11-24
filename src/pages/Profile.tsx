@@ -125,49 +125,53 @@ const Profile: React.FC = () => {
           </div>
         </div>
 
-        {/* Tabs Navigation */}
-        <div className="flex gap-4 mb-6">
-          <button
-            onClick={() => setActiveTab("dados-pessoais")}
-            className="flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold transition-all"
-            style={{
-              backgroundColor: activeTab === "dados-pessoais" ? colors.slateBlue : "transparent",
-              color: activeTab === "dados-pessoais" ? colors.springGreen : colors.text.muted,
-              border: `1px solid ${activeTab === "dados-pessoais" ? colors.slateBlue : "transparent"}`
-            }}
-          >
-            <FiUser size={18} />
-            DADOS PESSOAIS
-          </button>
-          <button
-            onClick={() => setActiveTab("historico")}
-            className="flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold transition-all"
-            style={{
-              backgroundColor: activeTab === "historico" ? colors.slateBlue : "transparent",
-              color: activeTab === "historico" ? colors.springGreen : colors.text.muted,
-              border: `1px solid ${activeTab === "historico" ? colors.slateBlue : "transparent"}`
-            }}
-          >
-            📊 HISTÓRICO
-          </button>
-          <button
-            onClick={() => setActiveTab("financeiro")}
-            className="flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold transition-all"
-            style={{
-              backgroundColor: activeTab === "financeiro" ? colors.slateBlue : "transparent",
-              color: activeTab === "financeiro" ? colors.springGreen : colors.text.muted,
-              border: `1px solid ${activeTab === "financeiro" ? colors.slateBlue : "transparent"}`
-            }}
-          >
-            💳 FINANCEIRO
-          </button>
-        </div>
+        {/* Tabs and Content Layout */}
+        <div className="flex gap-6">
+          {/* Tabs Navigation - Vertical */}
+          <div className="flex flex-col gap-3 w-64">
+            <button
+              onClick={() => setActiveTab("dados-pessoais")}
+              className="flex items-center gap-3 px-5 py-4 rounded-2xl font-semibold transition-all text-left"
+              style={{
+                backgroundColor: activeTab === "dados-pessoais" ? colors.slateBlue : "transparent",
+                color: activeTab === "dados-pessoais" ? colors.springGreen : colors.text.muted,
+                border: `1px solid ${activeTab === "dados-pessoais" ? colors.slateBlue : colors.darkBlue}`
+              }}
+            >
+              <FiUser size={20} />
+              DADOS PESSOAIS
+            </button>
+            <button
+              onClick={() => setActiveTab("historico")}
+              className="flex items-center gap-3 px-5 py-4 rounded-2xl font-semibold transition-all text-left"
+              style={{
+                backgroundColor: activeTab === "historico" ? colors.slateBlue : "transparent",
+                color: activeTab === "historico" ? colors.springGreen : colors.text.muted,
+                border: `1px solid ${activeTab === "historico" ? colors.slateBlue : colors.darkBlue}`
+              }}
+            >
+              <span className="text-xl">📊</span>
+              HISTÓRICO
+            </button>
+            <button
+              onClick={() => setActiveTab("financeiro")}
+              className="flex items-center gap-3 px-5 py-4 rounded-2xl font-semibold transition-all text-left"
+              style={{
+                backgroundColor: activeTab === "financeiro" ? colors.slateBlue : "transparent",
+                color: activeTab === "financeiro" ? colors.springGreen : colors.text.muted,
+                border: `1px solid ${activeTab === "financeiro" ? colors.slateBlue : colors.darkBlue}`
+              }}
+            >
+              <span className="text-xl">💳</span>
+              FINANCEIRO
+            </button>
+          </div>
 
-        {/* Tab Content */}
-        <div
-          className="rounded-3xl p-6"
-          style={{ backgroundColor: colors.darkBlue, border: `1px solid ${colors.slateBlue}` }}
-        >
+          {/* Tab Content */}
+          <div
+            className="flex-1 rounded-3xl p-6"
+            style={{ backgroundColor: colors.darkBlue, border: `1px solid ${colors.slateBlue}` }}
+          >
           {activeTab === "dados-pessoais" && (
             <div>
               <h3 className="text-xl font-bold mb-6" style={{ color: colors.white }}>
@@ -392,6 +396,7 @@ const Profile: React.FC = () => {
               </div>
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>

@@ -88,7 +88,7 @@ const Profile: React.FC = () => {
                         <div>
                           <p className="text-sm" style={{ color: colors.text.muted }}>Saldo total</p>
                           <p className="text-2xl font-bold" style={{ color: colors.white }}>
-                            {showBalance ? totalBalance : "R$•••.•••,••"}
+                            {showBalance ? totalBalance : "•••"}
                           </p>
                         </div>
                       </div>
@@ -106,10 +106,10 @@ const Profile: React.FC = () => {
 
                     <div className="flex gap-3">
                       <PrimaryButton variant="springGreen" size="small">
-                        DEPOSITAR 💰
+                        💰 DEPOSITAR
                       </PrimaryButton>
                       <PrimaryButton variant="primary" size="small">
-                        SACAR 💵
+                        💵 SACAR
                       </PrimaryButton>
                     </div>
                   </div>

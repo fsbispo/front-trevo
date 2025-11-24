@@ -27,39 +27,28 @@ const Profile: React.FC = () => {
     <div className="min-h-screen" style={{ backgroundColor: colors.gunmetal }}>
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Banner Hero com Trevo */}
-        <div
-          className="relative w-full rounded-2xl overflow-hidden mb-8"
-          style={{
-            height: '220px',
-            background: 'linear-gradient(135deg, #4CAF50 0%, #81C784 50%, #4CAF50 100%)'
-          }}
-        >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-8xl opacity-30">🍀</div>
+        <div className="relative w-full rounded-3xl overflow-hidden mb-8">
+          <div
+            className="w-full"
+            style={{
+              height: '220px',
+              background: 'linear-gradient(135deg, #4CAF50 0%, #81C784 50%, #4CAF50 100%)',
+              borderRadius: '24px 24px 0 0'
+            }}
+          >
+            <div className="absolute inset-0 flex items-center justify-center" style={{ height: '220px' }}>
+              <div className="text-center">
+                <div className="text-8xl opacity-30">🍀</div>
+              </div>
             </div>
           </div>
 
-          {/* Profile Info Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'rgba(10, 46, 54, 0.8)' }}>
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <img
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=Corey"
-                    alt="Avatar"
-                    className="w-20 h-20 rounded-full border-4"
-                    style={{ borderColor: colors.springGreen }}
-                  />
-                  <div
-                    className="absolute bottom-0 right-0 w-6 h-6 rounded-full flex items-center justify-center border-2"
-                    style={{ backgroundColor: colors.emerald, borderColor: colors.gunmetal }}
-                  >
-                    <span className="text-xs">🦊</span>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
+          {/* Profile Info Below Image */}
+          <div className="relative" style={{ backgroundColor: colors.darkBlue, borderRadius: '0 0 24px 24px' }}>
+            <div className="px-6 pt-16 pb-6">
+              <div className="flex items-start justify-between flex-wrap gap-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
                     <h2 className="text-xl font-bold" style={{ color: colors.springGreen }}>
                       {name}
                     </h2>
@@ -75,45 +64,64 @@ const Profile: React.FC = () => {
                     ID: {userId}
                   </p>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-3">
-                <div className="text-right">
-                  <div className="flex items-center gap-2 mb-1">
-                    <BsBank style={{ color: colors.springGreen }} />
-                    <p className="text-xs" style={{ color: colors.text.muted }}>Saldo total</p>
+                <div className="flex items-center gap-4">
+                  <div
+                    className="rounded-xl p-3 flex items-center gap-3"
+                    style={{ backgroundColor: colors.slateBlue }}
+                  >
+                    <BsGift size={20} style={{ color: colors.springGreen }} />
+                    <div>
+                      <p className="text-xs" style={{ color: colors.text.muted }}>Bônus total</p>
+                      <p className="text-sm font-bold" style={{ color: colors.white }}>{bonusBalance}</p>
+                    </div>
                   </div>
-                  <p className="text-xl font-bold" style={{ color: colors.white }}>
-                    {totalBalance}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <PrimaryButton variant="springGreen" size="small">
-                    DEPOSITAR 💰
-                  </PrimaryButton>
-                  <PrimaryButton variant="primary" size="small">
-                    SACAR 💵
-                  </PrimaryButton>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Bonus Card */}
-        <div
-          className="rounded-xl p-4 mb-6"
-          style={{ backgroundColor: colors.darkBlue, border: `1px solid ${colors.slateBlue}` }}
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <BsGift size={24} style={{ color: colors.springGreen }} />
-              <div>
-                <p className="text-xs" style={{ color: colors.text.muted }}>Bônus total</p>
-                <p className="text-lg font-bold" style={{ color: colors.white }}>{bonusBalance}</p>
+                  <div
+                    className="rounded-xl p-3"
+                    style={{ backgroundColor: colors.slateBlue }}
+                  >
+                    <div className="flex items-center gap-2 mb-1">
+                      <BsBank style={{ color: colors.springGreen }} />
+                      <p className="text-xs" style={{ color: colors.text.muted }}>Saldo total</p>
+                    </div>
+                    <p className="text-xl font-bold" style={{ color: colors.white }}>
+                      {totalBalance}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <PrimaryButton variant="springGreen" size="small">
+                      DEPOSITAR 💰
+                    </PrimaryButton>
+                    <PrimaryButton variant="primary" size="small">
+                      SACAR 💵
+                    </PrimaryButton>
+                  </div>
+                </div>
               </div>
             </div>
-            <FiEye style={{ color: colors.text.muted }} />
+
+            {/* Avatar Positioned on Top */}
+            <div
+              className="absolute left-6"
+              style={{ top: '-50px' }}
+            >
+              <div className="relative">
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Corey"
+                  alt="Avatar"
+                  className="w-24 h-24 rounded-full border-4"
+                  style={{ borderColor: colors.springGreen, backgroundColor: colors.darkBlue }}
+                />
+                <div
+                  className="absolute bottom-0 right-0 w-7 h-7 rounded-full flex items-center justify-center border-2"
+                  style={{ backgroundColor: colors.emerald, borderColor: colors.darkBlue }}
+                >
+                  <span className="text-sm">🦊</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -121,7 +129,7 @@ const Profile: React.FC = () => {
         <div className="flex gap-4 mb-6">
           <button
             onClick={() => setActiveTab("dados-pessoais")}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold transition-all"
             style={{
               backgroundColor: activeTab === "dados-pessoais" ? colors.slateBlue : "transparent",
               color: activeTab === "dados-pessoais" ? colors.springGreen : colors.text.muted,
@@ -133,7 +141,7 @@ const Profile: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveTab("historico")}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold transition-all"
             style={{
               backgroundColor: activeTab === "historico" ? colors.slateBlue : "transparent",
               color: activeTab === "historico" ? colors.springGreen : colors.text.muted,
@@ -144,7 +152,7 @@ const Profile: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveTab("financeiro")}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold transition-all"
             style={{
               backgroundColor: activeTab === "financeiro" ? colors.slateBlue : "transparent",
               color: activeTab === "financeiro" ? colors.springGreen : colors.text.muted,
@@ -157,7 +165,7 @@ const Profile: React.FC = () => {
 
         {/* Tab Content */}
         <div
-          className="rounded-xl p-6"
+          className="rounded-3xl p-6"
           style={{ backgroundColor: colors.darkBlue, border: `1px solid ${colors.slateBlue}` }}
         >
           {activeTab === "dados-pessoais" && (
@@ -253,13 +261,13 @@ const Profile: React.FC = () => {
 
               <div className="flex gap-2 mb-6">
                 <button
-                  className="px-4 py-2 rounded-lg font-semibold"
+                  className="px-4 py-2 rounded-2xl font-semibold"
                   style={{ backgroundColor: colors.springGreen, color: colors.gunmetal }}
                 >
                   Depósito
                 </button>
                 <button
-                  className="px-4 py-2 rounded-lg font-semibold"
+                  className="px-4 py-2 rounded-2xl font-semibold"
                   style={{ backgroundColor: colors.slateBlue, color: colors.lightBlue }}
                 >
                   Saque
@@ -305,7 +313,7 @@ const Profile: React.FC = () => {
                 {[1, 2, 3, 4, ">"].map((page, index) => (
                   <button
                     key={index}
-                    className="w-10 h-10 rounded-lg font-semibold"
+                    className="w-10 h-10 rounded-2xl font-semibold"
                     style={{
                       backgroundColor: page === 1 ? colors.lightBlue : colors.slateBlue,
                       color: page === 1 ? colors.gunmetal : colors.lightBlue
@@ -335,7 +343,7 @@ const Profile: React.FC = () => {
 
               <div className="space-y-4">
                 <div
-                  className="flex items-center justify-between p-4 rounded-lg"
+                  className="flex items-center justify-between p-4 rounded-2xl"
                   style={{ backgroundColor: colors.slateBlue }}
                 >
                   <div className="flex items-center gap-3">
@@ -344,13 +352,13 @@ const Profile: React.FC = () => {
                   </div>
                   <div className="flex gap-2">
                     <button
-                      className="p-2 rounded-lg hover:opacity-80"
+                      className="p-2 rounded-xl hover:opacity-80"
                       style={{ backgroundColor: colors.darkBlue }}
                     >
                       <FiEdit2 style={{ color: colors.lightBlue }} />
                     </button>
                     <button
-                      className="p-2 rounded-lg hover:opacity-80"
+                      className="p-2 rounded-xl hover:opacity-80"
                       style={{ backgroundColor: colors.darkBlue }}
                     >
                       🗑️
@@ -359,7 +367,7 @@ const Profile: React.FC = () => {
                 </div>
 
                 <div
-                  className="flex items-center justify-between p-4 rounded-lg"
+                  className="flex items-center justify-between p-4 rounded-2xl"
                   style={{ backgroundColor: colors.slateBlue }}
                 >
                   <div className="flex items-center gap-3">
@@ -368,13 +376,13 @@ const Profile: React.FC = () => {
                   </div>
                   <div className="flex gap-2">
                     <button
-                      className="p-2 rounded-lg hover:opacity-80"
+                      className="p-2 rounded-xl hover:opacity-80"
                       style={{ backgroundColor: colors.darkBlue }}
                     >
                       <FiEdit2 style={{ color: colors.lightBlue }} />
                     </button>
                     <button
-                      className="p-2 rounded-lg hover:opacity-80"
+                      className="p-2 rounded-xl hover:opacity-80"
                       style={{ backgroundColor: colors.darkBlue }}
                     >
                       🗑️

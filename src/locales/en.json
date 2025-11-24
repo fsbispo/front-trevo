@@ -11,6 +11,29 @@
     "components": "Components",
     "language": "Settings"
   },
+  "footer": {
+    "raspadinha": {
+      "title": "SCRATCHCARD",
+      "items": ["Option 1"]
+    },
+    "cassino": {
+      "title": "CASINO",
+      "items": ["Casino", "Live Casino"]
+    },
+    "suporte": {
+      "title": "SUPPORT",
+      "items": [
+        "Help Center",
+        "Terms and Conditions",
+        "Privacy Policy",
+        "Bonus Policy",
+        "AML/CFT Policy",
+        "Responsible Gaming"
+      ]
+    },
+    "imagesText": "Secure payment methods",
+    "copyright": "2025 Trevo Club LTDA, registered under CNPJ: 00.000.000/0000-00. Trevo Club is authorized by Ordinance SPA/MF No. 2.096, dated December 30, 2024"
+  },
   "pages": {
     "home": {
       "title": "Home",

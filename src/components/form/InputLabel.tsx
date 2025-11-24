@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import colors from "../../styles/colors";
+import colors from "../../styles/styles";
 
 type InputVariant = "default" | "primary" | "secondary" | "success" | "warning" | "error";
 

@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import { useSidebar } from '../../contexts/SidebarContext';
-import { colors } from '../../styles/colors';
+import { colors } from '../../styles/styles';
+import Footer from './Footer';
 
 interface LayoutProps {
   children: ReactNode;
@@ -35,6 +36,8 @@ export default function Layout({ children }: LayoutProps) {
           {children}
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

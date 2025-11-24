@@ -11,6 +11,29 @@
     "components": "Componentes",
     "language": "Configurações"
   },
+  "footer": {
+    "raspadinha": {
+      "title": "RASPADINHA",
+      "items": ["Opção 1"]
+    },
+    "cassino": {
+      "title": "CASSINO",
+      "items": ["Cassino", "Cassino ao vivo"]
+    },
+    "suporte": {
+      "title": "SUPORTE",
+      "items": [
+        "Central de Ajuda",
+        "Termos e condições",
+        "Política de Privacidade",
+        "Política de Bônus",
+        "Política de PLD/CFTP",
+        "Jogo Responsável"
+      ]
+    },
+    "imagesText": "Jogue com responsabilidade! Jogue de forma consciente e racional, leia todas as informações disponíveis em nossa secção de Jogo Responsável.",
+    "copyright": "2025 Trevo Club LTDA, inscrita no CNPJ: 00.000.000/0000-00. Trevo Club é autorizada pela Portaria SPA/MF No. 2.096, de 30 de Dezembro de 2024"
+  },
   "pages": {
     "home": {
       "title": "Home",

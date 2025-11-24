@@ -4,7 +4,7 @@ import {
     DialogTrigger
 } from "../ui/dialog"
 import { ReactNode } from "react"
-import colors from "../../styles/colors"
+import colors from "../../styles/styles"
 import login from "../../assets/login.png"
 import loginMobile from "../../assets/login-mobile.png"
 import HeaderDialog from "./HeaderDialog"

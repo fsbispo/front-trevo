@@ -1,4 +1,4 @@
-import colors from "../../styles/colors";
+import colors from "../../styles/styles";
 import fonts from "../../styles/fonts";
 import { ButtonVariant } from "./interface/IButton";
 import { ButtonSize } from "./interface/IButton";

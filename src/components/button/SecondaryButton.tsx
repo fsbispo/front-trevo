@@ -1,4 +1,4 @@
-import colors from "../../styles/colors";
+import colors from "../../styles/styles";
 import { ButtonSize, ButtonProps } from "./interface/IButton";
 
 type SecondaryButtonVariant = "secondary" | "secondaryGradiant" | "secondaryNeon" | "gray" | "gunmetal";

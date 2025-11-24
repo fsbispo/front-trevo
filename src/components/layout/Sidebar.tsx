@@ -9,7 +9,7 @@ import { HiMenuAlt2 } from 'react-icons/hi';
 import { RiMenuFoldLine } from 'react-icons/ri';
 import { useSidebar } from '../../contexts/SidebarContext';
 import { useState } from 'react';
-import colors from '../../styles/colors';
+import colors from '../../styles/styles';
 
 const menuItems = [
   { path: '/', labelKey: 'navigation.home', icon: BiSolidMedal },

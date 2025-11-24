@@ -1,5 +1,5 @@
 import React from "react";
-import { cardStyles } from "@/styles/colors";
+import { cardStyles } from "@/styles/styles";
 import PlayButton from "../button/PlayButton";
 import plinkoImage from "../../assets/plinko.png";
 

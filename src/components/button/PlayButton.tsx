@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPlay } from "react-icons/fa";
-import { playButtonColors } from "../../styles/colors";
+import { playButtonColors } from "../../styles/styles";
 
 type PlayButtonSize = "sm" | "md" | "lg";
 

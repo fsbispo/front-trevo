@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSidebar } from '../../contexts/SidebarContext';
-import colors from '../../styles/colors';
+import colors from '../../styles/styles';
 import logoImage from '../../assets/logo.svg';
 import { LoginDialog } from '../dialog/Login';
 import { RegisterDialog } from '../dialog/Register';

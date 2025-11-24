@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import colors from "../../styles/colors";
+import colors from "../../styles/styles";
 import fonts from "../../styles/fonts";
 import { ButtonVariant, ButtonSize } from "./interface/IButton";
 

@@ -68,6 +68,30 @@ export const playButtonColors = {
   text: "#231a04",
 };
 
+export const footerStyles = {
+  textColor: {
+    title: '#a0dfed', // --color-powderblue
+    subTitle: "#1E8BA4", // --color-lightblue
+    imagesText: '#1e8ba4', // Cor do texto das imagens (segundo andar)
+    copyright: '#1e8ba4', // Cor do texto do copyright (terceiro andar)
+  },
+  textSize: {
+    title: "16px",
+    subTitle: "14px",
+    imagesText: "10px", // Tamanho da fonte do segundo andar
+    copyright: "12px", // Tamanho da fonte do terceiro andar
+  },
+  fonts: {
+    imagesText: 'var(--font-noto-sans)', // Fonte Noto Sans para segundo andar
+    copyright: 'var(--font-noto-sans)', // Fonte Noto Sans para terceiro andar
+  },
+  colors: {
+    socialBackground: colors.gunmetal, // Background dos ícones sociais
+    divider: '#0a2e36', // Cor dos divisores
+    iconColor: '#ffffff', // Cor dos ícones
+  },
+};
+
 export const cardStyles = {
   
   card: {

@@ -106,10 +106,10 @@ const Profile: React.FC = () => {
 
                     <div className="flex gap-3">
                       <PrimaryButton variant="primary" size="small">
-                        💰 DEPOSITAR
+                        DEPOSITAR
                       </PrimaryButton>
                       <PrimaryButton variant="primary" size="small">
-                        💵 SACAR
+                        SACAR
                       </PrimaryButton>
                     </div>
                   </div>

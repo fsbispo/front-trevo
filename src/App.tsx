@@ -5,6 +5,7 @@ import Users from './pages/Users';
 import Documents from './pages/Documents';
 import Settings from './pages/Settings';
 import Components from './pages/Components';
+import Profile from './pages/Profile';
 import { SidebarProvider } from './contexts/SidebarContext';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/documents" element={<Documents />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/components" element={<Components />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Layout>
       </Router>
